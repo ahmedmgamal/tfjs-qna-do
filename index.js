@@ -59,8 +59,12 @@ async function init() {
   inputText = document.getElementById('input-text');
   questionText = document.getElementById('question');
 
-  model = await qna.load();
+
+  console.log("Loading qna");
+  model = await qna.load().then((e) => console.log(e)).catch((e) => console.log(e));;
   document.getElementById('answer-btn').disabled = false;
+  console.log("answer-btn disabled = false");
+
 }
 
 
