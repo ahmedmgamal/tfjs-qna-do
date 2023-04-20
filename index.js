@@ -61,7 +61,7 @@ async function init() {
 
 
   console.log("Loading qna");
-  model = await qna.load().then((e) => console.log(e)).catch((e) => console.log(e));;
+  await qna.load().then((e) => model = e;console.log(e);).catch((e) => console.log(e));;
   document.getElementById('answer-btn').disabled = false;
   console.log("answer-btn disabled = false");
 
